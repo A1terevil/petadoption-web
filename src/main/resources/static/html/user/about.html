@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content=""/>
+
+
+    <!-- css files -->
+    <link rel="stylesheet" href="../../bootstrap/bootstrap/bootstrap.css" type="text/css" media="all">
+    <!-- Owl-Carousel-CSS -->
+    <link rel="stylesheet" href="../../css/user/style.css" type="text/css" media="all" />
+    <link href='../../css/user/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+	<style>
+		.btn-default {
+		    background-color: #007bff; /* 蓝色背景 */
+		    color: #fff; /* 白色文字 */
+		    border: none; /* 没有边框 */
+		    padding: 10px 20px; /* 内边距 */
+		    cursor: pointer; /* 光标样式 */
+		    font-size: 16px; /* 字体大小 */
+		    border-radius: 5px; /* 圆角 */
+		    text-decoration: none; /* 取消下划线 */
+		    display: inline-block; /* 行内块级元素 */
+		    transition: background-color 0.3s; /* 过渡效果 */
+		}
+		
+		.btn-default:hover {
+		    background-color: #0056b3; /* 鼠标悬停时的背景色 */
+		}
+	</style>
+</head>
+<body  id="about_bg">
+<!--导航栏-->
+<!-- sticky navigation -->
+<!-- welcome -->
+<div class="about" id="about" >
+	<input type="button" value="返回主页" class="btn-default active" id="back_home">
+    <div class="container">
+        <h3 class="agile-title">欢迎</h3>
+        <div class="about-top w3ls-agile">
+<!--            <div class="col-md-6 red">-->
+<!--                <img class="img-responsive" src="../../images/about/ab.jpg" alt="">-->
+<!--            </div>-->
+            <div class="col-md-6 come">
+                <div class="about-wel">
+					
+                    <h5>几句话关于我们的
+                        <span>猫狗生活</span>
+                    </h5>
+                    <p>面对这样可爱的猫和狗谁能不喜爱呢？
+                        伤心时，它总是在我身边陪伴着我；
+                        开心时，我总会和他一起分享，它成了和我不形影不离的好朋友。</p>
+                    <ul>
+                        <li>
+                            <i class="glyphicon glyphicon-ok"></i>猫和狗的健康和关怀</li>
+                        <li>
+                            <i class="glyphicon glyphicon-ok"></i>猫和狗的美容</li>
+                        <li>
+                            <i class="glyphicon glyphicon-ok"></i>猫和狗的食物</li>
+                        <li>
+                            <i class="glyphicon glyphicon-ok"></i>猫和狗的行为</li>
+                    </ul>
+                </div>
+                <div class="button-styles">
+                    <a href="#cat" data-toggle="modal" data-target="#Catbtn">养狗注意的地方</a>
+                    <a href="#dog" data-toggle="modal" data-target="#Dogbtn">养猫注意的地方</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="gallery" class="gallery">
+    <div class="container">
+        <h3 class="agile-title">可爱</h3>
+    </div>
+</div>
+<!-- Modal5 -->
+<div class="modal fade" id="Catbtn" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-info">
+                    <h4>Dog Life</h4>
+                    <img src="../../images/about/d2.jpg" alt=" " class="img-responsive" style="width: 30%;"/>
+                    <p class="para-agileits-w3layouts">
+                        喂食的时间要准，尽量按照在原主人家的习惯喂养，不要喂它们过多的甜食、咸食和刺激性强的食品。
+                        刚来的宝宝，主人要亲自喂食，时日积久，便能和爱犬建立起深厚的感情，加深相互信任的程度，
+                        主人的另一个重要任务是要帮助小家伙克服离开母亲的痛苦，尽快适应新环境。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal5 -->
+<div class="modal fade" id="Dogbtn" tabindex="-1" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <div class="modal-info">
+                    <h4>Cat Life</h4>
+                    <img src="../../images/about/c.jpg" alt=" " class="img-responsive" style="width: 30%;"/>
+                    <p class="para-agileits-w3layouts">
+                        我们不能一直将小猫放在家里面养，我们需要时不时的将小猫带出去溜溜,然后，我们在养小猫的时候，还需要多陪小猫玩耍。
+                        我们在养小猫的时候，还需要多打理打理它的毛发。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- //Gallery -->
+<!-- js -->
+<script src="../../js/user/jquery-2.2.3.min.js"></script>
+<script src="../../js/admin/bootstrap.min.js"></script>
+<!-- Necessary-JavaScript-File-For-Bootstrap -->
+<!-- //js -->
+
+<!-- Banner Slider -->
+<script src="../../js/user/responsiveslides.min.js"></script>
+<script>
+    $(function () {
+        $("#slider").responsiveSlides({
+            auto: true,
+            pager: true,
+            nav: true,
+            speed: 1000,
+            namespace: "callbacks",
+            before: function () {
+                $('.events').append("<li>before event fired.</li>");
+            },
+            after: function () {
+                $('.events').append("<li>after event fired.</li>");
+            }
+        });
+    });
+</script>
+<!-- //Banner Slider -->
+
+<!-- Sticky Navigation Script -->
+<script>
+    $(window).scroll(function () {
+        if ($(window).scrollTop() >= 795) {
+            $('nav').addClass('fixed-header');
+        } else {
+            $('nav').removeClass('fixed-header');
+        }
+    });
+
+    /* scrollTop() >= 795
+       Should be equal the the height of the header
+     */
+</script>
+<!-- //Sticky Navigation Script -->
+
+<!-- simple-lightbox -->
+<script src="../../js/user/simple-lightbox.min.js"></script>
+<script>
+    $(function () {
+        var gallery = $('.agileinfo-gallery-row a').simpleLightbox({
+            navText: ['&lsaquo;', '&rsaquo;']
+        });
+    });
+</script>
+<link href='../../css/user/simplelightbox.min.css' rel='stylesheet' type='text/css'>
+<!-- Light-box css -->
+<!-- //simple-lightbox -->
+
+<!-- smoothscroll -->
+<script src="../../js/user/SmoothScroll.min.js"></script>
+<!-- //smoothscroll -->
+
+<!-- start-smooth-scrolling -->
+<script src="../../js/user/move-top.js"></script>
+<script src="../../js/user/easing.js"></script>
+<script>
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+
+            $('html,body').animate({
+                scrollTop: $(this.hash).offset().top
+            }, 1000);
+        });
+		
+		$("#back_home").click(function(){
+			location.href="../../../index.html";
+		});
+    });
+</script>
+<!-- //end-smooth-scrolling -->
+
+<!-- smooth-scrolling-of-move-up -->
+<script>
+    $(document).ready(function () {
+        /*
+        var defaults = {
+            containerID: 'toTop', // fading element id
+            containerHoverID: 'toTopHover', // fading element hover id
+            scrollSpeed: 1200,
+            easingType: 'linear'
+        };
+        */
+        $().UItoTop({
+            easingType: 'easeOutQuart'
+        });
+
+    });
+</script>
+<!-- //smooth-scrolling-of-move-up -->
+
+<!-- Owl-Carousel-JavaScript -->
+<script src="../../js/user/owl.carousel.js"></script>
+<script>
+    $(document).ready(function () {
+        $("#owl-demo").owlCarousel({
+            items: 3,
+            lazyLoad: true,
+            autoPlay: true,
+            pagination: true,
+        });
+    });
+</script>
+<!-- //Owl-Carousel-JavaScript -->
+</body>
+</html>

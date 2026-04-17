@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="petadoption.mapper.ClientMapper">
+ 
+ <select id="getAllClients" resultType="Client">
+	select * from client 
+ </select>
+ 
+ <select id="getClientByNaT" resultType="Client">
+ 	select * from client where cname = #{cname} and tel = #{tel}
+ </select>
+ 
+ <delete id="deleteClientByNaT" parameterType="Client">
+     delete from client where cname = #{cname} and tel = #{tel}
+ </delete>
+ 
+  <update id="updateClientByCid" parameterType="Client">
+     update client set cname=#{cname},csex=#{csex},cage=#{cage},tel=#{tel},addr=#{addr},exp=#{exp},artime=#{artime}
+      where cid=#{cid}
+ </update>
+ 
+  <insert id="insertClient" parameterType="Client">
+ 	insert into client values(null,#{cname},#{csex},#{cage},#{tel},#{addr},#{exp},#{artime})
+ </insert>
+ 
+ 
+ 
+ </mapper>

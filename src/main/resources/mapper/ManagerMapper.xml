@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ <mapper namespace="petadoption.mapper.ManagerMapper">
+ 
+ <select id="getAllManagers" resultType="Manager">
+	select * from manager 
+ </select>
+ 
+  <select id="getManagerByMname" resultType="Manager">
+ 	select * from manager where mname = #{mname}
+ </select>
+ 
+ <delete id="deleteManagerByMid" parameterType="java.lang.Integer">
+     delete from manager where mid = #{mid}
+ </delete>
+ 
+  <update id="updateManagerByMid" parameterType="Manager">
+     update manager set mname=#{mname},macc=#{macc},mpwd=#{mpwd}
+      where mid=#{mid}
+ </update>
+ 
+  <insert id="insertManager" parameterType="Manager">
+ 	insert into manager values(null,#{mname},#{macc},#{mpwd})
+ </insert>
+ 
+ 
+ 
+ </mapper>

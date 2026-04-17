@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>同意申请</title>
+    <!-- 引入css样式文件 -->
+    <!-- Bootstrap Core CSS -->
+    <link href="../../css/admin/bootstrap.min.css" rel="stylesheet">
+    <!-- MetisMenu CSS -->
+    <link href="../../css/admin/metisMenu.min.css" rel="stylesheet">
+    <!-- DataTables CSS -->
+    <link href="../../css/admin/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../../css/admin/sb-admin-2.css" rel="stylesheet">
+    <!-- Custom Fonts -->
+    <link href="../../css/admin/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="../../css/admin/boot-crm.css" rel="stylesheet" type="text/css">
+    <style>
+        .panel-heading{background-color: #337ab7;border-color: #2e6da4;font-size:14px;padding-left:20px;height:36px;line-height:36px;color:white;position:relative;cursor:pointer;}/*转成手形图标*/
+        .panel-heading span{position:absolute;right:10px;top:12px;}
+    </style>
+</head>
+<body>
+<div id="wrapper">
+    <!-- 导航栏部分 -->
+    <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="">流浪猫狗管理系统</a>
+        </div>
+        <!-- 导航栏右侧图标部分 -->
+        <!-- 导航栏右侧图标部分 -->
+<!--        <ul class="nav navbar-top-links navbar-right">-->
+<!--            &lt;!&ndash; 消息通知 end &ndash;&gt;-->
+<!--            &lt;!&ndash; 用户信息和系统设置 start &ndash;&gt;-->
+<!--            <li class="dropdown">-->
+<!--                <a class="dropdown-toggle" data-toggle="dropdown" href="crmclass/list.action#">-->
+<!--                    <i class="fa fa-user fa-fw"></i>-->
+<!--                    <i class="fa fa-caret-down"></i>-->
+<!--                </a>-->
+<!--                <ul class="dropdown-menu dropdown-user">-->
+<!--                    <li onclick="exit()">-->
+<!--                        <a href="#">-->
+<!--                            <i class="fa fa-sign-out fa-fw"></i>退出登录-->
+<!--                        </a>-->
+<!--                    </li>-->
+<!--                </ul>-->
+<!--            </li>-->
+<!--            &lt;!&ndash; 用户信息和系统设置结束 &ndash;&gt;-->
+<!--        </ul> -->
+        <!-- 左侧显示列表部分 start-->
+        <div class="navbar-default sidebar" role="navigation">
+            <div class="sidebar-nav navbar-collapse">
+                <!-- 教学管理  折叠的分组列表 -->
+                <div class="panel-heading" id="collapseListGroupHeading3" data-toggle="collapse" data-target="#collapseListGroup3" role="tab">
+                    <h4 class="panel-title">
+                        后台管理 <span class="fa fa-chevron-up right"></span>
+                    </h4>
+                </div>
+                <div id="collapseListGroup3" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="collapseListGroupHeading3">
+                    <ul class="list-group">
+                        <li class="list-group-item my_font">
+                            <a href="user.html">
+                                <i class="fa fa-flash fa-fw"></i> 用户信息
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="pet.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 宠物管理
+                            </a>
+                        </li>
+                     <!--   <li class="list-group-item my_font">
+                            <a href="t_adopt.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 领养管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="comment.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 评论管理
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="agree.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 同意领养列表
+                            </a>
+                        </li>
+                        <li class="list-group-item my_font">
+                            <a href="disagree.html">
+                                <i class="fa fa-sitemap fa-fw"></i> 不同意领养列表
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+
+            </div>
+        </div><!-- 左侧显示列表部分 end-->
+
+    </nav>
+    <!-- 领养表列表查询部分  start-->
+    <div id="page-wrapper">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">申请同意管理</h1>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+        <div class="panel panel-default">
+            <!-- 搜索部分 -->
+            <div class="panel-body">
+                <form class="form-inline" method="get" action="">
+         <!--           <div class="form-group">
+                        <label for="fingById">用户编号</label>
+                        <input type="text" class="form-control" id="fingById" value="" name="userId">
+                    </div>
+                    <button type="submit" class="btn btn-primary">查询</button>-->
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="panel panel-default">
+                    <div class="panel-heading">申请同意列表</div>
+                    <!-- /.panel-heading -->
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>宠物编号</th>
+                            <th>用户编号</th>
+                            <th>宠物名字</th>
+                            <th>申请时间</th>
+                        </tr>
+                        </thead>
+                        <tbody id="tbody">
+      <!--                  <tr id="tr-temp" style="display: none">
+                            <td>编号</td>
+                            <td>1</td>
+                            <td>zhangsan</td>
+                            <td>kitiy</td>
+                            <td>2022.5.20</td>
+                        </tr>-->
+
+                        </tbody>
+                    </table>
+<!--                    <div class="col-md-12 text-right">
+                        <nav><ul class="pagination">
+                            <li class="disabled"><a href="crmclass/list.action#">首页 </a></li>
+                            <li class="disabled"><a href="crmclass/list.action#">上一页 </a></li>
+                            <li class="active"><a href="crmclass/list.action#">1</spanclass="sr-only"></spanclass
+                                ="sr-only"></a></li>
+                            <li class="disabled"><a href="crmclass/list.action#">下一页</a></li>
+                            <li class="disabled"><a href="crmclass/list.action#">尾页</a></li>
+                        </ul></nav>
+                    </div>-->
+                    <!-- /.panel-body -->
+                </div>
+                <!-- /.panel -->
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+    </div>
+    <!-- 用户查询  end-->
+</div>
+
+<!-- 引入js文件 -->
+<!-- jQuery -->
+<script src="../../js/admin/jquery-1.11.3.min.js"></script>
+<script src="../../js/admin/admin.js"></script>
+<script src="../../js/axios-0.18.0.js"></script>
+
+
+<!-- 编写js代码 -->
+<script>
+    let parent = document.getElementById("tbody");
+
+    selectAgree();
+    // 查询领养审核信息
+    function selectAgree() {
+        //1.
+        axios({
+            method: "get",
+            url: "http://localhost:8080/PetAMSystem/adopt/selectAgree"
+        }).then(function (resp) {
+            let agrees = resp.data;
+            if (agrees.length == 0) {
+                alert("无同意记录");
+                return;
+            }
+            for (let i = 0; i < agrees.length; i++) {
+                parent.innerHTML += "  <tr id=\"tr-temp\">\n" +
+                    "                            <td>"+(i+1)+"</td>\n" +
+                    "                            <td>"+agrees[i].petId+"</td>\n" +
+                    "                            <td>"+agrees[i].userId+"</td>\n" +
+                    "                            <td>"+agrees[i].petName+"</td>\n" +
+                    "                            <td>"+agrees[i].adoptTime+"</td>\n" +
+                    "                        </tr>"
+            }
+        })
+    }
+</script>
+
+</body></html>

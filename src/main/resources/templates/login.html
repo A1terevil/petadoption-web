@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+    <link href="/static/css/admin/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="loginDiv">
+    <form action="" id="form">
+        <h1 id="loginMsg">管理员登录</h1>
+        <p>管理员账号:<input id="username" name="username" type="text" ></p>
+
+        <p>管理员密码:<input id="password" name="password" type="password" ></p>
+
+        <div id="subDiv"><!--这里需要写登录函数-->
+          <input id="login" type="button" class="button" value="登录"> 
+            <input id="reset" type="reset" class="button btn" value="重置" >
+			<input id="tuichu" type="button" class="button" value="退出"> 
+        </div>
+    </form>
+</div>
+
+<script src="/static/js/user/jquery-2.2.3.min.js"></script>
+<script th:inline="javascript">
+
+	//这里要和后端连接，调真正的数据库里面的数据
+ 	$(document).ready(function() {
+		
+	    var data = /*[[${list}]]*/ [];    // 直接输出原始的 JavaScript 对象
+	    console.table(data);
+	    
+	    function findMpwdByMacc(macc) {
+	  	  for (let i = 0; i < data.length; i++) {
+	  	    if (data[i].macc === macc) {
+	  	      return data[i].mpwd;
+	  	    }
+	  	  }
+	  	  return "";
+	  	}
+	    
+	    $('#login').click(function() {
+			var macc=$('#username').val();
+			var pwd=findMpwdByMacc(macc);
+			var isAccountEmpty = $('#username').val() ? false : true;
+			var isPassWordEmpty = $('#password').val() ? false : true;
+			if($("#password").val()==pwd && !isAccountEmpty&& pwd!=null&&!isPassWordEmpty){
+				window.location.href = "user/client";
+			}
+	        else{
+				if(isAccountEmpty||isPassWordEmpty){
+					alert("账号或密码为空");
+					window.location.href = "/login";
+				}		
+				else{
+					alert("登陆失败，账号或密码错误！！")
+					window.location.href = "/login";
+				}
+			}
+	    });
+	});
+	
+	
+ 	$('#tuichu').click(function() {
+	    window.location.href = "/index";
+	});
+					
+			
+</script>
+
+</body>
+</html>

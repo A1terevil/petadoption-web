@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>管理员登录</title>
+    <link href="../../css/admin/login.css" rel="stylesheet">
+</head>
+
+<body>
+<div id="loginDiv">
+    <form action="" id="form">
+        <h1 id="loginMsg">管理员登录</h1>
+        <p>管理员账号:<input id="username" name="username" type="text" ></p>
+
+        <p>管理员密码:<input id="password" name="password" type="password" ></p>
+
+        <div id="subDiv"><!--这里需要写登录函数-->
+          <input id="login" type="button" class="button" value="登录"> 
+            <input id="reset" type="reset" class="button btn" value="重置" >
+			<input id="tuichu" type="button" class="button" value="退出"> 
+        </div>
+    </form>
+</div>
+
+<script src="../../js/axios-0.18.0.js"></script>
+<script src="../../js/user/jquery-2.2.3.min.js"></script>
+<script>
+	var text_count="123079777";
+	var text_pwd="140760723";
+	//$.noConflict();
+	//这里要和后端连接，调真正的数据库里面的数据
+	$(document).ready(function() {
+	    $('#login').click(function() {
+			var isAccountEmpty = $('#username').val() ? false : true;
+				if($("#password").val()==text_pwd && !isAccountEmpty){
+				location.href = "user.html";
+			}
+	        else{
+				
+				if(isAccountEmpty){
+					alert("账号为空");
+				}		
+				else{
+					alert("登陆失败，账号或密码错误！！")
+				}
+			}
+	    });
+	});
+	
+	$('#login').click(function() {
+			var isAccountEmpty = $('#username').val() ? false : true;
+				if($("#password").val()==text_pwd && !isAccountEmpty){
+				location.href = "user.html";
+			}
+	        else{
+				
+				if(isAccountEmpty){
+					alert("账号为空");
+				}		
+				else{
+					alert("登陆失败，账号或密码错误！！")
+				}
+			}
+	    });
+	});
+	//退出
+	$(document).ready(function() {
+	    $('#tuichu').click(function() {
+	        location.href = "../../../index.html";
+	    });
+	});
+    //为登录按钮注册点击事件
+ //    document.getElementById("login").onclick = function (){
+ //        //1. 定义js对象
+ //        var formData = {
+ //            adminAccount:"123456",
+ //            adminPassword:"123456";
+ //        }
+
+ //        //2. 获取值，设置值
+ //        let adminAccount = document.getElementById("username").value;
+ //        formData.adminAccount = adminAccount;
+ //        //获取值，设置值
+ //        let adminPassword = document.getElementById("password").value;
+ //        formData.adminPassword = adminPassword;
+		
+ //        //PetAMSystem/user/register
+ //        //3. 发送请求
+ //        axios({
+ //            method:"post",
+ //            url:"http://localhost:8080/PetAMSystem/admin/selectByAdminAccountAndAdminPassword",
+ //            data:formData
+ //        }).then(function (resp){
+ //            console.log(resp.data);
+ //            if(resp.data == null){
+ //                alert("登录失败，账号或密码不对");
+ //                return;
+ //            }
+ //            alert("登录成功,"+resp.data.realName+" 欢迎您");
+ //            //跳转到管理页面
+ //            location.href = "http://localhost:8080/PetAMSystem/static/html/admin/user.html";
+ //            return;
+ //        })
+ //    }
+	
+	
+	// function jump(){
+	// 	location.href="http://localhost:8080/PetAMSystem/static/html/admin/user.html"
+	// }
+</script>
+
+</body>
+</html>
